@@ -12,6 +12,7 @@ describe "Guessing CLI" do
       allow(self).to receive(:rand).and_return(5)
 
       expect(self).to receive(:gets).and_return("2")
+      expect(self).to receive(:gets).and_return("exit")
 
       expect { run_guessing_game }.to output(/Sorry! The computer guessed 6./).to_stdout
     end
@@ -20,6 +21,7 @@ describe "Guessing CLI" do
       allow(self).to receive(:rand).and_return(1)
 
       expect(self).to receive(:gets).and_return("2")
+      expect(self).to receive(:gets).and_return("exit")
 
       expect { run_guessing_game }.to output(/You guessed the correct number!/).to_stdout
     end
